@@ -56,16 +56,15 @@ void Example3()
 
 	auto it = std::find_if(values.begin(), values.end(), [](int value) { return value > 2; });
 
-	auto lambda = [&](std::vector<int>::iterator it)
+	std::cout << "Lambda Example 3: " << std::endl;
+	[&](std::vector<int>::iterator it) -> void
 	{
 		while (it != values.end())
 		{
 			std::cout << "Value: " << * it << std::endl;
 			it++;
 		}
-	};
-	std::cout << "Lambda Example 3: " << std::endl;
-	lambda(it);
+	}(it);
 	std::cout << "-----------" << std::endl;
 }
 
